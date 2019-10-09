@@ -166,7 +166,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - **Spark hat die Aufgabe erledigt**
 ![Spark Complete](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete.png)
 
-- **Lösung in der Shell**
+- **Lösung in der Shell (Pi is roughly 3.14149499141495)**
 ![Spark Complete Shell](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete2.png)
 
 
