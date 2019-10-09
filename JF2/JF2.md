@@ -118,5 +118,5 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - In der Container-Shell den Spark Master starten
 - ```/spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080```
 
-![Alt-Text](/sparkmaster.png)
+![Spark Master](https://github.com/DahlmannIT/personalUSP/blob/master/JF2/sparkmaster.png)
 
