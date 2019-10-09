@@ -36,3 +36,7 @@
 - WebUI completed App
 ![WebUI completed App](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/compose_completed_app.png)
 
+
+
+---
+Referenz: [A Journey Into Big Data with Apache Spark: Part 1](https://towardsdatascience.com/a-journey-into-big-data-with-apache-spark-part-1-5dfcc2bccdd2) von Ashley Broadley
