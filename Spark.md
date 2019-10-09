@@ -136,4 +136,10 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
 - Im Browser ``` localhost:8080 ``` öffnen
 
+### Docker Netzwerk erstellen
+
+- Neue Powershell öffnen
+- ``` docker network create spark_network ```
+
+
 ### Spark Worker erstellen
