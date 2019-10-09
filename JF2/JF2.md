@@ -111,13 +111,38 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 ```
 ## Powershell in Windows
+
+### Docker Netzwerk erstellen
+
+- Neue Powershell öffnen
+- ``` docker network create spark_network ```
+
+### Spark Master erstellen 
+
 - Powershell öffnen
 - In Pfad des Dockerfile's wechseln
 - ```docker build .```
 - **ID** des Builds aufschreiben oder Umbenennen
-- ```docker run --rm -it [ID] /bin/sh```
-- In der Container-Shell den Spark Master starten
-- ```/spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080```
+- ``` docker run --rm -it --name spark-master --hostname spark-master -p 7077:7077 -p 8080:8080 --network spark_network [ID] /bin/sh ```
+- In der Spark-Container-Shell den Spark Master starten
+- ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
+- Im Browser ``` localhost:8080 ``` öffnen
 
-![Spark Master](https://github.com/DahlmannIT/personalUSP/blob/master/JF2/sparkmaster.png)
+![Spark Master](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/sparkmaster.png)
+
+
+### Spark Worker erstellen
+
+- neue Powershell öffnen
+- In Pfad des Dockerfile's wechseln
+- ``` docher ps ``` 
+- **ID** des Images notieren
+- ``` docker run --rm -it --name spark-worker --hostname spark-worker --network spark_network [ID] /bin/sh ```
+- In der Spark-Container-Shell den Spark Worker starten
+- ``` /spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8080 spark://spark-master:7077 ```
+- Der Spark-Worker registriert sich nun beim Spark-Master
+
+![Spark Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/sparkworker.png)
+
+
 
