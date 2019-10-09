@@ -1,5 +1,5 @@
 # Spark in Docker aufsetzen
-Referenz: https://towardsdatascience.com/a-journey-into-big-data-with-apache-spark-part-1-5dfcc2bccdd2
+
 
 ## Dockerfile
 ```ssh
@@ -154,3 +154,5 @@ networks:
 	- Worker-Anzahl ist variabel zu wählen
 
 
+---
+Referenz: [A Journey Into Big Data with Apache Spark: Part 1](https://towardsdatascience.com/a-journey-into-big-data-with-apache-spark-part-1-5dfcc2bccdd2) von Ashley Broadley
