@@ -7,4 +7,8 @@
 - ``` docker-compose up --scale spark-worker=3 ```
 - Browser öffnen und ``` localhost:8080 ``` anschauen
 
+- neue Powershell öffnen
+- ``` docker run --rm -it --network spark_network spark_compose/spark /bin/sh ``` wobei "spark_compose/spark" der Image-Name ist 
+- in der Spark-Shell ``` /spark/bin/spark-submit --master spark://spark-master:7077 --class org.apache.spark.examples.SparkPi /spark/examples/jars/spark-examples_2.11-2.4.4.jar 1000 ```
+
 
