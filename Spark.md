@@ -124,6 +124,9 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 ```
 ## Powershell in Windows
+
+### Spark Master erstellen 
+
 - Powershell öffnen
 - In Pfad des Dockerfile's wechseln
 - ```docker build .```
@@ -132,3 +135,5 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - In der Container-Shell den Spark Master starten
 - ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
 - Im Browser ``` localhost:8080 ``` öffnen
+
+### Spark Worker erstellen
