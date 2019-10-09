@@ -135,7 +135,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 - neue Powershell öffnen
 - In Pfad des Dockerfile's wechseln
-- ``` docher ps ``` 
+- ``` docker ps ``` 
 - **ID** des Images notieren
 - ``` docker run --rm -it --name spark-worker --hostname spark-worker --network spark_network [ID] /bin/sh ```
 - In der Spark-Container-Shell den Spark Worker starten
@@ -144,6 +144,18 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 ![Spark Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/sparkworker.png)
 ![Spark Localhost Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/localhost_worker.png)
+
+### Spark Driver erstellen (sendet Applications ans Cluster)
+
+- neue Powershell öffnen
+- In Pfad des Dockerfile's wechseln
+- ``` docker ps ```
+- **ID** des Images notieren
+- ``` docker run --rm -it --network spark_network [ID] /bin/sh ```
+- In der Spark-Container-Shell die Application (in unserem Fall Pi berechnen) starten
+- ``` /spark/bin/spark-submit --master spark://spark-master:7077 --class org.apache.spark.examples.SparkPi /spark/examples/jars/spark-examples_2.11-2.4.0.jar 1000 ```
+- Die Application wird ans Cluster gesendet und bearbeitet
+- Dies kann man im WebUI sehen
 
 
 
