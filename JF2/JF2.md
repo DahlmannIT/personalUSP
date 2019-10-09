@@ -48,8 +48,9 @@ Spark-Shell per Scala (Zugriff auf Java-Bibliotheken) oder Python.
 
 ```
 **Ports**  
+
 Service | Ports 
----| ---
+--- | ---
 Spark Standalone Master (RPC) | 7077 
 Spark Standalone Master (Web UI) | 8580, 8980*  
 Spark Standalone Worker | 8581, 8981*  
