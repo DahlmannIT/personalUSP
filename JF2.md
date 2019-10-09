@@ -62,14 +62,14 @@ Spark-Shell per Scala (Zugriff auf Java-Bibliotheken) oder Python.
 
 ```
 **Ports**  
-| Service | Ports | 
-| ------- | ----- |
-| Spark Standalone Master (RPC) | 7077 |
+| Service                                                             | Ports | 
+| ------------------------------------------------------------------- | ----- |
+| Spark Standalone Master (RPC)    | 7077        |
 | Spark Standalone Master (Web UI) | 8580, 8980* |
 | Spark Standalone Worker | 8581, 8981* |
 | Spark Thrift Server | 2304 |
 | Spark History Server | 18080,18480* |
-| Spark External Shuffle Service (if yarn shuffle service is enabled) | 7337 |
+| Spark External Shuffle Service (if yarn shuffle service is enabled) | 7337  |
 | CLDB | 7222 |
 | ZooKeeper | 5181 |
 | Nodes running ResourceManager | 8032 |
