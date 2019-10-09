@@ -11,8 +11,9 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 ```
 ## Powershell in Windows
-- STRG+C um Abzubrechen
-- STRG+D um aus der Spark-Shell (#) zu kommen 
+- ```STRG+C``` um Aktionen in der Powershell abzubrechen
+- ```STRG+D``` um aus der Spark-Shell (#) zu kommen 
+- ```Rechtsklick``` um in der Spark-Shell kopierte Kommandos einzufügen
 
 ### Docker Netzwerk erstellen
 
