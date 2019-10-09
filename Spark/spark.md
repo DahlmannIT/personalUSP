@@ -128,7 +128,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
 - Im Browser ``` localhost:8080 ``` öffnen
 
-![Spark Master](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/sparkmaster.png)
+![Spark Master](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/sparkmaster.png)
 
 
 ### Spark Worker erstellen
@@ -142,7 +142,8 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - ``` /spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8080 spark://spark-master:7077 ```
 - Der Spark-Worker registriert sich nun beim Spark-Master
 
-![Spark Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/sparkworker.png)
+![Spark Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/sparkworker.png)
+![Spark Localhost Worker](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/localhost_worker.png)
 
 
 
