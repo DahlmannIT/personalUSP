@@ -128,6 +128,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - In Pfad des Dockerfile's wechseln
 - ```docker build .```
 - **ID** des Builds aufschreiben oder Umbenennen
-- ```docker run --rm -it [ID] /bin/sh```
-- In der Container-Shell den Spark Master starten
 - ``` docker run --rm -it --name spark-master --hostname spark-master -p 7077:7077 -p 8080:8080 [ID] /bin/sh ```
+- In der Container-Shell den Spark Master starten
+- ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
+- Im Browser ``` localhost:8080 ``` öffnen
