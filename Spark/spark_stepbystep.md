@@ -1,4 +1,5 @@
 # Spark in Docker aufsetzen
+
 ## Dockerfile
 ```ssh
 FROM openjdk:8-alpine
@@ -10,6 +11,8 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 ```
 ## Powershell in Windows
+STRG+C um Abzubrechen
+STRG+D um aus der Spark-Shell (#) zu kommen 
 
 ### Docker Netzwerk erstellen
 
