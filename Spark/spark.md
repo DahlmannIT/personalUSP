@@ -153,12 +153,18 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - **ID** des Images notieren
 - ``` docker run --rm -it --network spark_network [ID] /bin/sh ```
 - In der Spark-Container-Shell die Application (in unserem Fall Pi berechnen) starten
-- ``` /spark/bin/spark-submit --master spark://spark-master:7077 --class org.apache.spark.examples.SparkPi /spark/examples/jars/spark-examples_2.11-2.4.0.jar 1000 ```
+- ``` /spark/bin/spark-submit --master spark://spark-master:7077 --class org.apache.spark.examples.SparkPi /spark/examples/jars/spark-examples_2.11-2.4.4.jar 1000 ```
 - Die Application wird ans Cluster gesendet und bearbeitet
 - Dies kann man im WebUI sehen
 
+Spark arbeitet die Application ab
 ![Spark Working](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_working.png)
+
+Spark hat die Aufgabe erledigt
 ![Spark Complete](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete.png)
+
+Lösung in der Shell
+![Spark Complete Shell](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete2.png)
 
 
 
