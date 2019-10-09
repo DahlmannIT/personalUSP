@@ -171,8 +171,14 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 
 
 ### Docker Compose erstellen (Automatisches hochfahren)
+
+- Vorher alle Container rebuilden
+	- ``` docker ps --all ```
+	- ``` docker stop [Name/ID] ```
+	- ``` docker rm [Name/ID] ```
+
 - Ordner öffnen in dem das Dockerfile liegt
-	- Datei namens ``` start-master.sh ``` erstellen
+- Datei namens ``` start-master.sh ``` erstellen
 ```
 #!/bin/sh
 /spark/bin/spark-class org.apache.spark.deploy.master.Master \
@@ -180,8 +186,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
     --port $SPARK_MASTER_PORT \
     --webui-port $SPARK_MASTER_WEBUI_PORT
 ```
-
-	- Datei namens ``` start-worker.sh ``` erstellen
+- Datei namens ``` start-worker.sh ``` erstellen
 	
 ```
 #!/bin/sh
@@ -195,6 +200,43 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 	- ``` COPY start-worker.sh /start-worker.sh ``` in neuer Zeile einfügen um Script zum Starten der Spark Workers ins Image einzubinden
 
 
+- Neues File namens ``` docker-compose.yml ``` erstellen
+```
+version: "3.3"
+services:
+  spark-master:
+    image: [NAME]/spark:latest
+    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    networks:
+      - spark-network
+    environment:
+      - "SPARK_LOCAL_IP=spark-master"
+      - "SPARK_MASTER_PORT=7077"
+      - "SPARK_MASTER_WEBUI_PORT=8080"
+    command: "/start-master.sh"
+  spark-worker:
+    image: [NAME]/spark:latest
+    depends_on:
+      - spark-master
+    ports:
+      - 8080
+    networks:
+      - spark-network
+    environment:
+      - "SPARK_MASTER=spark://spark-master:7077"
+      - "SPARK_WORKER_WEBUI_PORT=8080"
+    command: "/start-worker.sh"
+networks:
+  spark-network:
+    driver: bridge
+    ipam:
+      driver: default
+```
+- beide ```[NAME]``` mit einem Namen ersetzen
 
 
 
