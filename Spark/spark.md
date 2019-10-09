@@ -238,5 +238,8 @@ networks:
 ```
 - beide ```[NAME]``` mit einem Namen ersetzen
 
+- Cluster mit ``` docker-compose up --scale spark-worker=3 ``` starten
+	- Worker-Anzahl ist variabel zu wählen
+
 
 
