@@ -117,12 +117,18 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - Neue Powershell öffnen
 - ``` docker network create spark_network ```
 
+### Spark Container erstellen
+
+- Powershell öffnen
+- In Pfad des Dockerfile's wechseln
+- ```docker build .``` oder ``` docker build -t [Name]/spark:latest . ``` mit einem Namen
+
 ### Spark Master erstellen 
 
 - Powershell öffnen
 - In Pfad des Dockerfile's wechseln
-- ```docker build .```
-- **ID** des Builds aufschreiben oder Umbenennen
+- ```docker ps --all ```
+- **ID** oder **Name** des Builds aufschreiben oder Umbenennen
 - ``` docker run --rm -it --name spark-master --hostname spark-master -p 7077:7077 -p 8080:8080 --network spark_network [ID] /bin/sh ```
 - In der Spark-Container-Shell den Spark Master starten
 - ``` /spark/bin/spark-class org.apache.spark.deploy.master.Master --ip `hostname` --port 7077 --webui-port 8080 ```
