@@ -4,15 +4,9 @@
 
 
 ### Framework Kafka
-https://ipt.ch/apache-kafka-und-was-es-mit-dem-hype-auf-sich-hat/
-**Vorteile**  
-```ssh
 
-```
-**Nachteile**  
-```ssh
+https://ipt.ch/apache-kafka-und-was-es-mit-dem-hype-auf-sich-hat/ 
 
-```
 **Schnittstellen**
 
 - Alles in Java, PHP, Python, C/C++, Ruby, Perl oder Go
@@ -29,14 +23,6 @@ Im Cluster: 2888, 3888
 	- ClientConnection: 2181
 	- FollowerConnection: 2888 (if leader)
 	- else & other connections: 3888
-
-```
-**Datenanbindung**
-```ssh
-
-```
-**Wie testet man?**
-```ssh
 
 ```
 
