@@ -176,7 +176,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 ![Spark Complete Shell](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete2.png)
 
 
-### Docker Compose erstellen (Automatisches hochfahren)
+### Docker Compose erstellen (Automatisches hochfahren des Masters und der Worker)
 
 - Vorher alle Container rebuilden
 	- ``` docker ps --all ```
