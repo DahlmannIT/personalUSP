@@ -194,6 +194,7 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
     --webui-port $SPARK_WORKER_WEBUI_PORT \
     $SPARK_MASTER
 ```
+- (Troubleshooting: Beide Dateien mit Notepad++ öffnen und per Edit -> EOL conversion -> ändern von CRLF zu LF. Rebuild and run)
 
 - Dockerfile öffnen
 	- ``` COPY start-master.sh /start-master.sh ``` in neuer Zeile einfügen um Script zum Starten eines Spark Masters ins Image einzubinden
@@ -237,6 +238,7 @@ networks:
       driver: default
 ```
 - beide ```[NAME]``` mit einem Namen ersetzen
+
 
 - Cluster mit ``` docker-compose up --scale spark-worker=3 ``` starten
 	- Worker-Anzahl ist variabel zu wählen
