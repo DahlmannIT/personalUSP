@@ -170,4 +170,31 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 ![Spark Complete Shell](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete2.png)
 
 
+### Docker Compose erstellen (Automatisches hochfahren)
+- Ordner öffnen in dem das Dockerfile liegt
+	- Datei namens ``` start-master.sh ``` erstellen
+```
+#!/bin/sh
+/spark/bin/spark-class org.apache.spark.deploy.master.Master \
+    --ip $SPARK_LOCAL_IP \
+    --port $SPARK_MASTER_PORT \
+    --webui-port $SPARK_MASTER_WEBUI_PORT
+```
+
+	- Datei namens ``` start-worker.sh ``` erstellen
+	
+```
+#!/bin/sh
+/spark/bin/spark-class org.apache.spark.deploy.worker.Worker \
+    --webui-port $SPARK_WORKER_WEBUI_PORT \
+    $SPARK_MASTER
+```
+
+- Dockerfile öffnen
+	- ``` COPY start-master.sh /start-master.sh ``` in neuer Zeile einfügen um Script zum Starten eines Spark Masters ins Image einzubinden
+	- ``` COPY start-worker.sh /start-worker.sh ``` in neuer Zeile einfügen um Script zum Starten der Spark Workers ins Image einzubinden
+
+
+
+
 
