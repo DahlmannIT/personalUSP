@@ -157,5 +157,8 @@ RUN tar -xzf spark-2.4.4-bin-hadoop2.7.tgz && \
 - Die Application wird ans Cluster gesendet und bearbeitet
 - Dies kann man im WebUI sehen
 
+![Spark Working](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_working.png)
+![Spark Complete](https://github.com/DahlmannIT/personalUSP/blob/master/Spark/img/spark_complete.png)
+
 
 
