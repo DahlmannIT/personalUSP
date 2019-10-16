@@ -29,11 +29,47 @@
 
 ## Prerequisites
 
-## Variables  
+## Variables 
+
+Path | Variable | Value | Explanation 
+---- | -------- | -------- | -----------
+docker-compose.yml | POSTGRES_USER | postgres | Username for Postgres access
+docker-compose.yml | POSTGRES_PASSWORD | queenthe3 | Password for Postgres access
 
 ## Ports
 
+Service | Ports 
+--- | ---
+Zeppelin | 8080:8080
+Postgres | 5432:5432
+
 ## <a name="dockercomposeyml"></a> docker-compose.yml
+
+```yml
+version: "3"
+services:
+
+  zeppelin:
+      image: xemuliam/zeppelin
+      container_name: zeppelin
+      ports:
+          - 8080:8080
+      volumes:
+          - /opt/zeppelin/logs
+          - /opt/zeppelin/notebook
+
+  postgres:
+      image: postgres:latest
+      restart: always
+      container_name: postgres
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=queenthe3
+      ports:
+          - "5432:5432"
+      volumes:
+          - ./postgres-data:/var/lib/postgresql
+```
 
 ## Installation guide
 - download and unzip `postgres_zeppelin.zip` from repository
