@@ -48,7 +48,19 @@
     sudo docker-compose up --remove-orphans
     ```
 - find the jdbc-driver in zeppelin-bash
+  ```bash
+  sudo docker exec -it zeppelin bash
+  ```
   ```shell
+  sudo docker exec -it zeppelin bash
+  ```
+  ```sh
+  sudo docker exec -it zeppelin bash
+  ```
+  ```zsh
+  sudo docker exec -it zeppelin bash
+  ```
+  ```console
   sudo docker exec -it zeppelin bash
   ```
   - use `ls` and `cd` to navigate into **interpreter** -> **jdbc**
