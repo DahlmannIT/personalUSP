@@ -62,6 +62,32 @@ Spark Standalone Master (RPC) | 7077
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
+```yml
+version: "3"
+services:
+
+  zeppelin:
+      image: xemuliam/zeppelin
+      container_name: zeppelin
+      ports:
+          - 8080:8080
+      volumes:
+          - /opt/zeppelin/logs
+          - /opt/zeppelin/notebook
+
+  postgres:
+      image: postgres:latest
+      restart: always
+      container_name: postgres
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=queenthe3
+      ports:
+          - "5432:5432"
+      volumes:
+          - ./postgres-data:/var/lib/postgresql
+```
+
 ## Installation guide
 
 > Wie installiert/konfiguriert man den Container?
