@@ -116,7 +116,7 @@ services:
   - click `notebook` -> `create new` and pick a random name like `my_notebook`
   - click the cogwheel and set the default interpreter to `jdbc` by drag'n'dropping it at the first place
   - click `save`
-  - to create a database, change to your newly created notebook and insert
+  - to create a database, change to your newly created notebook `my_notebook` and use the jdbc-interpreter with `%jdbc`
     ```sql
     %jdbc
     create database my_db;
@@ -128,6 +128,14 @@ services:
     - default.user: `postgres`
     - artifact: `/opt/zeppelin/interpreter/jdbc/postgresql-9.4-1201-jdbc41.jar`
       (jdbc-path + jar)
+  - click `save`
+  - click the cogwheel and activate the interpreter `dobby` by right-clicking it until its blue
+  - access your notebook `my_notebook`
+  - use your new interpreter `%dobby` and create a table
+    ```sql
+    %dobby
+    create table test(col_name BIGINT);
+    ```
     
 
 ## <a name="howtouse"></a> How-to-use
