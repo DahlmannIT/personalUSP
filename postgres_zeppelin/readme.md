@@ -45,7 +45,7 @@
 - navigate to unzipped data folder
 - build and start containers:
   ```shell
-  sudo docker-compose up
+  sudo docker-compose up -d
   ```   
 
 ## <a name="howtouse"></a> How-to-use
