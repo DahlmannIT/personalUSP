@@ -41,8 +41,26 @@
 - navigate to unzipped data folder
 - build and start containers:
   ```shell
-  sudo docker-compose up -d
+  sudo docker-compose up
   ```   
+  - if there are other containers stopping the boot-up, try:
+    ```shell
+    sudo docker-compose up --remove-orphans
+    ```
+- find the jdbc-driver in zeppelin-bash
+  ```shell
+  sudo docker exec -it zeppelin bash
+  ```
+  - use `ls` and `cd` to navigate into **interpreter** -> **jdbc**
+  - print the path using `pwd` and copy it, e.g.
+    ```shell
+    /opt/zeppelin/interpreter/jdbc
+    ```
+  - print the name of your **jdbc.jar** file using `ls` and copy it, e.g.
+    ```shell
+    zeppelin-jdbc-0.8.0.jar
+    ``` 
+    
 
 ## <a name="howtouse"></a> How-to-use
 
