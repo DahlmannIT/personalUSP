@@ -25,8 +25,6 @@
 
 ## <a name="frameworks-explanation"></a> Framework's explanation 
 
-
-
 ## <a name="frameworks-architecture"></a> Framework's architecture
 
 ## Prerequisites
