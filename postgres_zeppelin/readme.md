@@ -96,7 +96,7 @@ services:
     ```shell
     postgresql-9.4-1201-jdbc41.jar
     ``` 
-- to create a database, access the postgres shell with (note that the second `postgres` is the username):
+- to create a database with POSTGRES, access the postgres shell with (note that the second `postgres` is the username):
   ```shell
   sudo docker exec -it postgres psql -U postgres
   ```
@@ -104,6 +104,15 @@ services:
     ```shell
     CREATE DATABASE my_db;
     ``` 
+- to create a database with ZEPPELIN, access the zeppelin webUI via `localhost:8080` in your browser
+  - click on `anonymous` -> `interpreter`, choose `jdbc` and click `edit`
+  - change the following settings:
+    - default.url: `jdbc:postgresql://postgres:5432/`
+    - default.password: `queenthe3`
+    - default.user: `postgres`
+    - artifact: `/opt/zeppelin/interpreter/jdbc/postgresql-9.4-1201-jdbc41.jar`
+      (jdbc-path + jar)
+  - click `save`
     
 
 ## <a name="howtouse"></a> How-to-use
