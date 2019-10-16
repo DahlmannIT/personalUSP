@@ -21,10 +21,10 @@
 
 ## Framework's architecture
 
-#Kafka Architektur
+### Kafka Architektur
 ![Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 
-#Flink Architektur
+### Flink Architektur
 ![Flink Architektur](http://www.heinz-schmitz.org/files/TSS-Schmitz/Nachrichtenbilder/2016/2016%2008/06-flink-stack-frontpage.jpg)
 
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
