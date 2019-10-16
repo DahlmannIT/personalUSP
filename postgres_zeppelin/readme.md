@@ -60,6 +60,14 @@
     ```shell
     zeppelin-jdbc-0.8.0.jar
     ``` 
+- to create a database, access the postgres shell with (note that the second `postgres` is the username):
+  ```shell
+  sudo docker exec -it postgres psql -U postgres
+  ```
+  - create the database `my_db`
+    ```shell
+    CREATE DATABASE my_db;
+    ``` 
     
 
 ## <a name="howtouse"></a> How-to-use
