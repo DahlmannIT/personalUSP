@@ -2,17 +2,19 @@
 
 [Framework's explanation](##1)
 
-[2](Framework's architecture)
+[Framework's architecture](##2)
 
-[3](Prerequisites)
+[Prerequisites](##3)
 
-[4](Important commands)
+[Important commands](##4)
 
-[5](Installation guide)
+[Installation guide](##5)
 
-[6](How-to-use)
+[How-to-use](##6)
 
-[7](Interfaces)
+[Interfaces](##7)
+
+
 
 
 ##1 Framework's explanation
