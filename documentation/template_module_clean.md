@@ -14,7 +14,7 @@
 
 * [Installation guide](#installation-guide)
 
-* [How-to-use](##how\-to\-use)
+* [How-to-use](#howtouse)
 
 * [Interfaces](#interfaces)
 
@@ -35,7 +35,7 @@
 
 ## Installation guide
 
-## How-to-use
+## <a name="howtouse"></a> How-to-use
 
 ## Interfaces
 
