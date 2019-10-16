@@ -12,6 +12,8 @@
 
 * [Ports](#ports)
 
+* [docker-compose.yml(#dockercomposeyml)
+
 * [Installation guide](#installation-guide)
 
 * [How-to-use](#howtouse)
@@ -57,6 +59,8 @@ docker-compose.yml | POSTGRES_USER | queenthe3 | Username for Postgres access
 Service | Ports 
 --- | ---
 Spark Standalone Master (RPC) | 7077 
+
+## <a name="dockercomposeyml"></a> docker-compose.yml
 
 ## Installation guide
 
