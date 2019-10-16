@@ -52,11 +52,11 @@
   sudo docker exec -it zeppelin bash
   ```
   - use `ls` and `cd` to navigate into **interpreter** -> **jdbc**
-  - print the path using `pwd` and copy it, e.g.
+  - print the path using `pwd` and copy it, in this case:
     ```shell
     /opt/zeppelin/interpreter/jdbc
     ```
-  - print the name of your **jdbc.jar** file using `ls` and copy it, e.g.
+  - print the name of your **jdbc.jar** file using `ls` and copy it, in this case:
     ```shell
     zeppelin-jdbc-0.8.0.jar
     ``` 
