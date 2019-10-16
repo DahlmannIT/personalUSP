@@ -1,18 +1,18 @@
 # Title
 
-[Framework's explanation](##1)
+[Framework's explanation](#framework's-explanation)
 
-[Framework's architecture](##2)
+[Framework's architecture](#framework's-architecture)
 
-[Prerequisites](##3)
+[Prerequisites](#prerequisites)
 
-[Important commands](##4)
+[Important commands](#important-commands)
 
-[Installation guide](##5)
+[Installation guide](#installation-guide)
 
-[How-to-use](##6)
+[How-to-use](##how-to-use)
 
-[Interfaces](##7)
+[Interfaces](#interfaces)
 
 
 
