@@ -1,4 +1,4 @@
-# personalUSP
+# personalUSP (public)
 
 ## Spark Guide
 
