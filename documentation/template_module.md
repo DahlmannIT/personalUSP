@@ -17,9 +17,9 @@
 
 
 
-##1 Framework's explanation
+## Framework's explanation
 
-##2 Framework's architecture
+## Framework's architecture
 
 ![Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
@@ -27,12 +27,12 @@
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 
-##3 Prerequisites
+## Prerequisites
 
-##4 Important commands
+## Important commands
 
-##5 Installation guide
+## Installation guide
 
-##6 How-to-use
+## How-to-use
 
-##7 Interfaces
+## Interfaces
