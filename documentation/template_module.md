@@ -14,7 +14,7 @@
 
 * [Installation guide](#installation-guide)
 
-* [How-to-use](##how\-to\-use)
+* [How-to-use](#howtouse)
 
 * [Interfaces](#interfaces)
 
@@ -61,7 +61,7 @@ Spark Standalone Master (RPC) | 7077
 
 > Wie installiert/konfiguriert man den Container?
 
-## How-to-use
+## <a name="howtouse"></a> How-to-use
 
 > Step by step guide 
 
