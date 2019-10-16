@@ -1,8 +1,8 @@
 # Title
 
-* [Framework's explanation](#framework%27s-explanation)
+* [Framework's explanation](#framework\'s-explanation)
 
-* [Framework's architecture](#framework%27s-architecture)
+* [Framework's architecture](#framework\'s-architecture)
 
 * [Prerequisites](#prerequisites)
 
@@ -10,7 +10,7 @@
 
 * [Installation guide](#installation-guide)
 
-* [How-to-use](##how%2Dto%2Duse)
+* [How-to-use](##how\-to\-use)
 
 * [Interfaces](#interfaces)
 
