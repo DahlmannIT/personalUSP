@@ -1,23 +1,23 @@
 # Title
 
-[Framework's explanation](#test)
+* [Framework's explanation](#test)
 
-[Framework's architecture](#framework's-architecture)
+* [Framework's architecture](#framework's-architecture)
 
-[Prerequisites](#prerequisites)
+* [Prerequisites](#prerequisites)
 
-[Important commands](#important-commands)
+* [Important commands](#important-commands)
 
-[Installation guide](#installation-guide)
+* [Installation guide](#installation-guide)
 
-[How-to-use](##how-to-use)
+* [How-to-use](##how-to-use)
 
-[Interfaces](#interfaces)
-
-
+* [Interfaces](#interfaces)
 
 
-## Framework's explanation {#test}
+
+
+## Framework's explanation 
 
 ## Framework's architecture
 
