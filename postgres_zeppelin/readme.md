@@ -40,10 +40,10 @@
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
 ## Installation guide
-- `postgres_zeppelin.zip` aus dem Repository herunterladen und entpacken
-- `Terminal` öffnen
-- In den Ordner der `entpackten Daten` navigieren
-- Docker-Compose-Images hochfahren:
+- download and unzip `postgres_zeppelin.zip` from repository
+- open `Terminal`
+- navigate to unzipped data folder
+- build and start containers:
   ```shell
   sudo docker-compose up
   ```   
