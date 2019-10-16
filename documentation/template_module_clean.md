@@ -12,6 +12,8 @@
 
 * [Ports](#ports)
 
+* [docker-compose.yml](#dockercomposeyml)
+
 * [Installation guide](#installation-guide)
 
 * [How-to-use](#howtouse)
@@ -32,6 +34,8 @@
 ## Variables  
 
 ## Ports
+
+## <a name="dockercomposeyml"></a> docker-compose.yml
 
 ## Installation guide
 
