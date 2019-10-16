@@ -3,6 +3,8 @@
 ## Dokumentation
 [Allgemeine Dokumentation](https://github.com/DahlmannIT/personalUSP/tree/master/documentation)
 
+![Architektur 16.10.2019](/img/Architektur_16102019.svg)
+
 ## Anbindungen
 [Input -> Kafka](https://github.com/DahlmannIT/personalUSP/tree/master/input_kafka)
 
