@@ -1,8 +1,8 @@
 # Title
 
-* [Framework's explanation](#framework\'s-explanation)
+* [Framework's explanation](#frameworks-explanation)
 
-* [Framework's architecture](#framework\'s-architecture)
+* [Framework's architecture](#frameworks-architecture)
 
 * [Prerequisites](#prerequisites)
 
@@ -17,9 +17,9 @@
 
 
 
-## Framework's explanation 
+## <a name="frameworks-explanation"></a> Framework's explanation 
 
-## Framework's architecture
+## <a name="frameworks-architecture"></a> Framework's architecture
 
 ## Prerequisites
 
