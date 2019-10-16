@@ -47,9 +47,9 @@ sudo docker-compose up -d
 ```
 ## Variables  
 
-Path | Variable | Belegung | Erläuterung 
+Path | Variable | Value | Explanation 
 ---- | -------- | -------- | -----------
-docker-compose.yml | POSTGRES_USER | queenthe3 | Username für den Postgres-Zugriff
+docker-compose.yml | POSTGRES_USER | queenthe3 | Username for Postgres access
 
 ## Ports
 
