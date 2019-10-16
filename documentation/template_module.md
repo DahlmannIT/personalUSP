@@ -12,7 +12,7 @@
 
 * [Ports](#ports)
 
-* [docker-compose.yml(#dockercomposeyml)
+* [docker-compose.yml](#dockercomposeyml)
 
 * [Installation guide](#installation-guide)
 
