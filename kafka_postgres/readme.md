@@ -6,8 +6,6 @@
 
 * [Prerequisites](#prerequisites)
 
-* [Important commands](#important-commands)
-
 * [Variables](#variables)
 
 * [Ports](#ports)
@@ -17,6 +15,8 @@
 * [Installation guide](#installation-guide)
 
 * [How-to-use](#howtouse)
+
+* [Important commands](#important-commands)
 
 * [Interfaces](#interfaces)
 
@@ -29,8 +29,6 @@
 
 ## Prerequisites
 
-## Important commands
-
 ## Variables  
 
 ## Ports
@@ -40,5 +38,7 @@
 ## Installation guide
 
 ## <a name="howtouse"></a> How-to-use
+
+## Important commands
 
 ## Interfaces
