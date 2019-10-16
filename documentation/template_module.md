@@ -8,6 +8,10 @@
 
 * [Important commands](#important-commands)
 
+* [Variables](#variables)
+
+* [Ports](#ports)
+
 * [Installation guide](#installation-guide)
 
 * [How-to-use](##how\-to\-use)
@@ -35,15 +39,23 @@ Bla | 0.8.15
 
 ## Important commands
 
-> Nützliche/Oft verwendete Commands 
+> Nützliche/Oft verwendete Commands mit kurzer Beschreibung
 
 - Docker-Compose-Images hochfahren mit `docker-compose` :+1:, e.g.
 ```shell
 sudo docker-compose up -d
 ```
-  
+## Variables  
+
+Path | Variable | Belegung | Erläuterung 
+---- | -------- | -------- | -----------
+docker-compose.yml | POSTGRES_USER | queenthe3 | Username für den Postgres-Zugriff
+
+## Ports
 
 ## Installation guide
+
+> Wie installiert/konfiguriert man den Container?
 
 ## How-to-use
 
