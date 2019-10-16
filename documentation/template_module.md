@@ -37,7 +37,7 @@ Bla | 0.8.15
 
 > Nützliche/Oft verwendete Commands 
 
-- Docker-Compose-Images hochfahren mit `docker-compose`, e.g.
+- Docker-Compose-Images hochfahren mit `docker-compose` :+1:, e.g.
 ```shell
 sudo docker-compose up -d
 ```
