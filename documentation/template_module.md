@@ -53,6 +53,10 @@ docker-compose.yml | POSTGRES_USER | queenthe3 | Username for Postgres access
 
 ## Ports
 
+Service | Ports 
+--- | ---
+Spark Standalone Master (RPC) | 7077 
+
 ## Installation guide
 
 > Wie installiert/konfiguriert man den Container?
