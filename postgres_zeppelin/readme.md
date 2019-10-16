@@ -25,6 +25,8 @@
 
 ## <a name="frameworks-explanation"></a> Framework's explanation 
 
+
+
 ## <a name="frameworks-architecture"></a> Framework's architecture
 
 ## Prerequisites
@@ -38,6 +40,13 @@
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
 ## Installation guide
+- `postgres_zeppelin.zip` aus dem Repository herunterladen und entpacken
+- `Terminal` öffnen
+- In den Ordner der `entpackten Daten` navigieren
+- Docker-Compose-Images hochfahren:
+  ```shell
+  sudo docker-compose up
+  ```   
 
 ## <a name="howtouse"></a> How-to-use
 
