@@ -117,10 +117,10 @@ services:
   - click the cogwheel and set the default interpreter to `jdbc` by drag'n'dropping it at the first place
   - click `save`
   - to create a database, change to your newly created notebook and insert
-  ```sql
-  %jdbc
-  create database my_db;
-  ```
+    ```sql
+    %jdbc
+    create database my_db;
+    ```
     
 
 ## <a name="howtouse"></a> How-to-use
