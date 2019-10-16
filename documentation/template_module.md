@@ -6,8 +6,6 @@
 
 * [Prerequisites](#prerequisites)
 
-* [Important commands](#important-commands)
-
 * [Variables](#variables)
 
 * [Ports](#ports)
@@ -17,6 +15,8 @@
 * [Installation guide](#installation-guide)
 
 * [How-to-use](#howtouse)
+
+* [Important commands](#important-commands)
 
 * [Interfaces](#interfaces)
 
@@ -40,14 +40,6 @@ Prerequisite | Version
 bla | 0.8.15
 docker-compose | latest
 
-## Important commands
-
-> Nützliche/Oft verwendete Commands mit kurzer Beschreibung
-
-- Docker-Compose-Images hochfahren mit `docker-compose` :+1:, e.g.
-    ```shell
-    sudo docker-compose up -d
-    ```
 ## Variables  
 
 Path | Variable | Value | Explanation 
@@ -97,6 +89,15 @@ services:
 ## <a name="howtouse"></a> How-to-use
 
 > Step by step guide 
+
+## Important commands
+
+> Nützliche/Oft verwendete Commands mit kurzer Beschreibung
+
+- Docker-Compose-Images hochfahren mit `docker-compose` :+1:, e.g.
+    ```shell
+    sudo docker-compose up -d
+    ```
 
 ## Interfaces
 
