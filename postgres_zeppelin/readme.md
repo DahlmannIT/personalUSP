@@ -113,6 +113,14 @@ services:
     - artifact: `/opt/zeppelin/interpreter/jdbc/postgresql-9.4-1201-jdbc41.jar`
       (jdbc-path + jar)
   - click `save`
+  - click `notebook` -> `create new` and pick a random name like `my_notebook`
+  - click the cogwheel and set the default interpreter to `jdbc` by drag'n'dropping it at the first place
+  - click `save`
+  - to create a database, change to your newly created notebook and insert
+  ```sql
+  %jdbc
+  create database my_db;
+  ```
     
 
 ## <a name="howtouse"></a> How-to-use
