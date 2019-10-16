@@ -106,7 +106,7 @@ services:
     ``` 
 - to create a database with ZEPPELIN, access the zeppelin webUI via `localhost:8080` in your browser
   - click on `anonymous` -> `interpreter`, choose `jdbc` and click `edit`
-  - change the following settings:
+  - change the following settings, to connect to the **postgres-server**:
     - default.url: `jdbc:postgresql://postgres:5432/`
     - default.password: `queenthe3`
     - default.user: `postgres`
@@ -121,6 +121,13 @@ services:
     %jdbc
     create database my_db;
     ```
+- to connect to our database `my_db` and create new tables, we need a new interpreter, lets call it `dobby`
+  - change the following settings, to connect to the **database**:
+    - default.url: **`jdbc:postgresql://postgres:5432/my_db`**
+    - default.password: `queenthe3`
+    - default.user: `postgres`
+    - artifact: `/opt/zeppelin/interpreter/jdbc/postgresql-9.4-1201-jdbc41.jar`
+      (jdbc-path + jar)
     
 
 ## <a name="howtouse"></a> How-to-use
