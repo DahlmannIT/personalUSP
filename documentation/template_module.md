@@ -63,4 +63,8 @@ Spark Standalone Master (RPC) | 7077
 
 ## How-to-use
 
+> Step by step guide 
+
 ## Interfaces
+
+> Anbindungen nach außen
