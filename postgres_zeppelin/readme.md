@@ -94,7 +94,7 @@ services:
     ```
   - print the name of your **jdbc.jar** file using `ls` and copy it, in this case:
     ```shell
-    zeppelin-jdbc-0.8.0.jar
+    postgresql-9.4-1201-jdbc41.jar
     ``` 
 - to create a database, access the postgres shell with (note that the second `postgres` is the username):
   ```shell
