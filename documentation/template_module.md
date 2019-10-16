@@ -35,7 +35,8 @@
 
 Prerequisite | Version 
 ------------ | -------
-Bla | 0.8.15
+bla | 0.8.15
+docker-compose | latest
 
 ## Important commands
 
