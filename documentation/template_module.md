@@ -20,6 +20,7 @@
 ##1 Framework's explanation
 
 ##2 Framework's architecture
+
 ![Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 [Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
