@@ -52,13 +52,15 @@ docker-compose | latest
 
 Path | Variable | Value | Explanation 
 ---- | -------- | -------- | -----------
-docker-compose.yml | POSTGRES_USER | queenthe3 | Username for Postgres access
+docker-compose.yml | POSTGRES_USER | postgres | Username for Postgres access
+docker-compose.yml | POSTGRES_PASSWORD | queenthe3 | Password for Postgres access
 
 ## Ports
 
 Service | Ports 
 --- | ---
-Spark Standalone Master (RPC) | 7077 
+Zeppelin | 8080:8080
+Postgres | 5432:5432
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
