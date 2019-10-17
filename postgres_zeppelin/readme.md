@@ -1,7 +1,5 @@
 # Connection Postgres -> Zeppelin
 
-* [Framework's explanation](#frameworks-explanation)
-
 * [Framework's architecture](#frameworks-architecture)
 
 * [Prerequisites](#prerequisites)
