@@ -35,7 +35,7 @@
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
-version: '3'
+```version: '3'
 services:
 
   zookeeper:
@@ -168,6 +168,7 @@ services:
  #     - jobmanager:jobmanager
  #   environment:
  #     - JOB_MANAGER_RPC_ADDRESS=jobmanager
+ ```
 
 ## Installation guide
 
