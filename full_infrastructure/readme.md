@@ -175,7 +175,28 @@ services:
 
 ## Installation guide
 
+- create your containers with docker-compose
+  ```sh
+  docker-compose up
+  ```
+
+- `./data` should not be an empty directory for now
+
+- execute the bash-script locally (required once)
+  - on Linux
+    ```sh
+    ./deploy-connector.sh
+    ```
+  - on Windows 
+    ```sh
+    
+    ```
+    
+
+
 ## <a name="howtouse"></a> How-to-use
+
+
 
 ## Important commands
 
