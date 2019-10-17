@@ -1,4 +1,4 @@
-# Anbindung Postgres -> Zeppelin
+# Connection Postgres -> Zeppelin
 
 * [Framework's explanation](#frameworks-explanation)
 
