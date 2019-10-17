@@ -26,6 +26,7 @@
 ## <a name="explanation"></a> Explanation 
 
 ## <a name="architecture"></a> Architecture
+![Flink Architektur](http://www.heinz-schmitz.org/files/TSS-Schmitz/Nachrichtenbilder/2016/2016%2008/06-flink-stack-frontpage.jpg)
 
 ## Prerequisites
 
