@@ -1,4 +1,4 @@
-# Input -> Kafka
+# Postgres
 
 * [Explanation](#explanation)
 
