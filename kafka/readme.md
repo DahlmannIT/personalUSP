@@ -2,7 +2,7 @@
 
 * [Framework's explanation](#frameworks-explanation)
 
-* [Framework's architecture](#frameworks-architecture)
+* [Architecture](#architecture)
 
 * [Prerequisites](#prerequisites)
 
@@ -25,7 +25,8 @@
 
 ## <a name="frameworks-explanation"></a> Framework's explanation 
 
-## <a name="frameworks-architecture"></a> Framework's architecture
+## <a name="architecture"></a> Architecture
+![Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 
 ## Prerequisites
 
