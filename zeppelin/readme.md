@@ -54,6 +54,11 @@ services:
 ```
 
 ## Installation guide
+- navigate to docker-compose.yml folder
+- build and start container:
+  ```shell
+  sudo docker-compose up
+  ```   
 
 ## <a name="howtouse"></a> How-to-use
 
