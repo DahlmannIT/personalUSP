@@ -26,7 +26,7 @@
 ## <a name="explanation"></a> Explanation 
 
 ## <a name="architecture"></a> Architecture
-![Postgres Architektur](https://upload.wikimedia.org/wikipedia/commons/5/52/PostgreSQL_processes_1.png)
+![Postgres architecture](https://upload.wikimedia.org/wikipedia/commons/5/52/PostgreSQL_processes_1.png)
 
 ## Prerequisites
 
