@@ -24,6 +24,7 @@
 
 
 ## <a name="explanation"></a> Explanation 
+Apache Flink is an open-source stream-processing framework developed by the Apache Software Foundation. The core of Apache Flink is a distributed streaming data-flow engine written in Java and Scala.Flink executes arbitrary dataflow programs in a data-parallel and pipelined manner. Flink's pipelined runtime system enables the execution of bulk/batch and stream processing programs. Furthermore, Flink's runtime supports the execution of iterative algorithms natively.
 
 ## <a name="architecture"></a> Architecture
 ![Flink Architektur](http://www.heinz-schmitz.org/files/TSS-Schmitz/Nachrichtenbilder/2016/2016%2008/06-flink-stack-frontpage.jpg)
