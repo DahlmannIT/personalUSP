@@ -35,7 +35,7 @@
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
-```
+```yml
 version: '3'
 services:
 
