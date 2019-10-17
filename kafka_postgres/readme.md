@@ -1,4 +1,4 @@
-# Anbindung Kafka <-> Postgres
+# Connection Kafka <-> Postgres
 
 * [Framework's explanation](#frameworks-explanation)
 
