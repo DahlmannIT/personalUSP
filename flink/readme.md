@@ -32,10 +32,43 @@ Apache Flink is an open-source stream-processing framework developed by the Apac
 ## Prerequisites
 
 ## Variables  
+None
 
 ## Ports
+Service | Ports 
+--- | ---
+Web Client | 8081:8081
+JobManager RPC | 6123:6123
+TaskManagers RPC | 6122:6122
+TaskManagers Data | 6121:6121
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
+```yml
+version: "2.1"
+services:
+  jobmanager:
+    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+    expose:
+      - "6123"
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+
+  taskmanager:
+    image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
+    expose:
+      - "6121"
+      - "6122"
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    links:
+      - "jobmanager:jobmanager"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+```
 
 ## Installation guide
 
