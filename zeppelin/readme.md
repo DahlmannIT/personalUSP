@@ -34,7 +34,26 @@
 
 ## Ports
 
+Service | Ports 
+--- | ---
+Zeppelin | 8080:8080
+
 ## <a name="dockercomposeyml"></a> docker-compose.yml
+
+```yml
+version: "3"
+services:
+
+zeppelin:
+      image: xemuliam/zeppelin
+      container_name: zeppelin
+      ports:
+          - 8080:8080
+      volumes:
+          - /opt/zeppelin/logs
+          - /opt/zeppelin/notebook
+
+```
 
 ## Installation guide
 
