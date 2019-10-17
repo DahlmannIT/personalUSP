@@ -34,7 +34,27 @@
 
 ## Ports
 
+Service | Ports 
+--- | ---
+Postgres | 5432:5432
+
 ## <a name="dockercomposeyml"></a> docker-compose.yml
+```yml
+version: "3"
+services:
+
+  postgres:
+      image: postgres:latest
+      restart: always
+      container_name: postgres
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=queenthe3
+      ports:
+          - "5432:5432"
+      volumes:
+          - ./postgres-data:/var/lib/postgresql
+```
 
 ## Installation guide
 
