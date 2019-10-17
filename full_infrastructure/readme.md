@@ -1,4 +1,4 @@
-# Anbindung Kafka <-> Flink
+# Nein
 
 * [Framework's explanation](#frameworks-explanation)
 
