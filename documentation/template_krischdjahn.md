@@ -30,8 +30,6 @@
 ### Postgres Architecture
 ![Postgres Architektur](https://upload.wikimedia.org/wikipedia/commons/5/52/PostgreSQL_processes_1.png)
 
-[Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
-[Kafka Architektur](https://www.tutorialspoint.com/apache_kafka/images/cluster_architecture.jpg)
 
 ## Prerequisites
 
