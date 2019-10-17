@@ -1,6 +1,7 @@
 # Full infrastructure
 
 * [Explanation](#explanation)
+
 Docker-based backend plattform using apache kafka as streaming framework, apache flink as big data framework, postgres as SQL database and apache zeppelin as developer analyze tool.
 
 * [Architecture](#architecture)
