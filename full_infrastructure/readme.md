@@ -24,7 +24,7 @@
 
 
 ## <a name="explanation"></a> Explanation 
-Docker-based backend plattform using apache kafka as streaming framework, apache flink as big data framework, postgres as SQL database and apache zeppelin as developer analyze tool.
+Docker-based backend platform using apache kafka as streaming framework, apache flink as big data framework, postgres as SQL database and apache zeppelin as developer analyze tool.
 
 ## <a name="architecture"></a> Architecture
 ![architecture infrastructure](/img/Architektur_16102019.svg)
