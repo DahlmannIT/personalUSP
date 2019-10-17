@@ -66,5 +66,5 @@ zeppelin:
 ## Interfaces
 
 ## <a name="connection-zeppelin<-postgres"></a> Connection Zeppelin <- Postgres
-<a href= https://github.com/DahlmannIT/personalUSP/tree/master/postgres_zeppelin</a>
+https://github.com/DahlmannIT/personalUSP/tree/master/postgres_zeppelin
 
