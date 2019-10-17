@@ -1,4 +1,4 @@
-# Input -> Kafka
+# Kafka
 
 * [Framework's explanation](#frameworks-explanation)
 
