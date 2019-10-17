@@ -44,7 +44,7 @@ TaskManagers Data | 6121:6121
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 ```yml
-version: "2.1"
+version: "3"
 services:
   jobmanager:
     image: ${FLINK_DOCKER_IMAGE_NAME:-flink}
