@@ -1,4 +1,4 @@
-# Anbindung (Proof of Concept) Flink <-> Postgres
+# Connection Flink <-> Postgres
 
 * [Framework's explanation](#frameworks-explanation)
 
