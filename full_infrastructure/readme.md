@@ -1,8 +1,8 @@
 # Nein
 
-* [Framework's explanation](#frameworks-explanation)
+* [Explanation](#explanation)
 
-* [Framework's architecture](#frameworks-architecture)
+* [Architecture](#architecture)
 
 * [Prerequisites](#prerequisites)
 
@@ -23,9 +23,10 @@
 
 
 
-## <a name="frameworks-explanation"></a> Framework's explanation 
+## <a name="explanation"></a> Explanation 
 
-## <a name="frameworks-architecture"></a> Framework's architecture
+## <a name="architecture"></a> Architecture
+![architecture infrastructure](/img/Architektur_16102019.svg)
 
 ## Prerequisites
 
