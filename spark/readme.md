@@ -35,6 +35,8 @@
 
 ## <a name="frameworks-architecture"></a> Framework's architecture
 
+![Spark Architecture](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/images/sparkapp-sparkcontext-master-slaves.png)
+
 ## Prerequisites
 
 ## Variables  
