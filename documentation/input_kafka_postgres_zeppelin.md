@@ -7,6 +7,9 @@
 - Browser starten
 - `localhost:8080`
 - Interpreter wie immer
+- Datenbank heißt `postgres`
+- nicht vergessen, den zweiten Interpreter zu aktivieren!
+- Tabelle heißt `test_topic`
 
 
 - `uip-infrastructure`d irectory  
