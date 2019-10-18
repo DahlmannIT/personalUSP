@@ -15,3 +15,5 @@
 - daten zu "test.csv" nennen und in `data` ordner einfügen
 
 - rest passiert automatisch -> wird in finished geworfen und in datenbank geschrieben yo
+
+- arbeiten auf der datenbank per zeppelin sql befehle 
