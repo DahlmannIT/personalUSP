@@ -25,7 +25,8 @@
 
 
 
-## <a name="explanation"></a> Explanation 
+## <a name="explanation"></a> Explanation
+Apache Zeppelin is a web-based notebook that enables interactive data analytics
 
 ## <a name="architecture"></a> Architecture
 ![Zeppelin architecture](https://miro.medium.com/max/638/0*nDidLEaoerUYvpKA.)
