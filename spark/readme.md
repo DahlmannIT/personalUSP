@@ -74,8 +74,8 @@ services:
     container_name: spark-master
     hostname: spark-master
     ports:
-      - "8080:8080"
-      - "7077:7077"
+      - 8080:8080
+      - 7077:7077
     networks:
       - spark-network
     environment:
