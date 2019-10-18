@@ -35,6 +35,8 @@
 
 * `\dt` alle Tables anzeigen
 
+* sql-befehle abfeuern
+
 
 ###  Kafka
 * `sudo docker exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic test_topic --from-beginning` neuen consumer erstellen und auf "test_topic" hören
