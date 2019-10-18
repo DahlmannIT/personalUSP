@@ -26,5 +26,7 @@ Writing a Dockerfile is the first step to containerizing an application. You can
   - `COPY` the file `package.json` from your host to the present location (`.`) in your image (so in this case, to /usr/src/app/package.json`)
   - `RUN` the command `npm install` inside your image filesystem (which will read `package.json` to determine your app’s node dependencies, and install them)
   - `COPY` in the rest of your app’s source code from your host to your image filesystem.
+  
+The steps above built up the filesystem of our image, but there’s one more line in our Dockerfile. The `CMD` directive is our first example of specifying some metadata in our image that describes how to run a container based off of this image. In this case, it’s saying that the containerized process that this image is meant to support is `npm start`.
 
 # Docker-compose
