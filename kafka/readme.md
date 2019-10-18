@@ -20,6 +20,12 @@
 
 * [Interfaces](#interfaces)
 
+* [Connection Kafka <- Input](#connection-kafka<-input)
+
+* [Connection Kafka <-> Flink](#connection-kafka<->flink)
+
+* [Connection Kafka <-> Flink](#connection-kafka<->postgres)
+
 
 
 
@@ -44,3 +50,12 @@ Apache Kafka is an open-source stream-processing software platform developed by 
 ## Important commands
 
 ## Interfaces
+
+## <a name="connection-kafka<-input"></a> Connection Kafka <-> Input
+https://github.com/DahlmannIT/personalUSP/tree/master/input_kafka
+
+## <a name="connection-kafka<->flink"></a> Connection Kafka <-> Flink
+https://github.com/DahlmannIT/personalUSP/tree/master/kafka_flink
+
+## <a name="connection-kafka<->postgres"></a> Connection Kafka <-> Postgres
+https://github.com/DahlmannIT/personalUSP/tree/master/kafka_postgres
