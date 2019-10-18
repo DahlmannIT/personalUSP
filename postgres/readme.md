@@ -32,6 +32,11 @@
 
 ## Variables  
 
+Path | Variable | Value | Explanation 
+---- | -------- | -------- | -----------
+docker-compose.yml | POSTGRES_USER | postgres | Username for Postgres access
+docker-compose.yml | POSTGRES_PASSWORD | queenthe3 | Password for Postgres access
+
 ## Ports
 
 Service | Ports 
@@ -51,7 +56,7 @@ services:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=queenthe3
       ports:
-          - "5432:5432"
+          - 5432:5432
       volumes:
           - ./postgres-data:/var/lib/postgresql
 ```
