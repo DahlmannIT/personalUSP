@@ -42,8 +42,50 @@ Apache Kafka is an open-source stream-processing software platform developed by 
 ## Ports
 
 ## <a name="dockercomposeyml"></a> docker-compose.yml
+```
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181"
+    hostname: zookeeper
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    ports:
+      - 9092:9092
+    hostname: kafka
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    depends_on:
+      - "zookeeper"
+```
 
 ## Installation guide
+
+navigate to the folder in which the .yml file is and get docker-compose up
+```
+docker-compose -f docker-compose.yml up
+```
+Creating of an topic. Make sure kafka is running and up. to create a kafka topic use..
+```
+docker-compose exec kafka kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic your_topic_name
+```
+Create and connect a producer to the topic in order to write in the topic
+```
+docker-compose exec kafka kafka-console-producer --broker-list localhost:9092 --topic your_topic_name
+```
+Create and connect a consumer to the topic in order to read from the topic
+```
+docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic your_topic_name --from-beginning
+```
+
 
 ## <a name="howtouse"></a> How-to-use
 
