@@ -20,3 +20,23 @@
 - rest passiert automatisch -> wird in finished geworfen und in datenbank geschrieben yo
 
 - arbeiten auf der datenbank per zeppelin sql befehle 
+
+
+
+## Commands
+
+### Postgres
+
+* `sudo docker exec -it postgres bash` postgres-bash öffnen 
+
+* `psql -U postgres -W`  bei Postgres anmelden
+
+* `\c` Connection herstellen
+
+* `\dt` alle Tables anzeigen
+
+
+###  Kafka
+* `sudo docker exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic test_topic --from-beginning` neuen consumer erstellen und auf "test_topic" hören
+
+
