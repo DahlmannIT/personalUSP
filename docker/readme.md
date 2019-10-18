@@ -19,4 +19,12 @@ COPY . .
 CMD [ "npm", "start" ]    
 ```
 
+Writing a Dockerfile is the first step to containerizing an application. You can think of these Dockerfile commands as a step-by-step recipe on how to build up our image. This one takes the following steps:
+
+  - Start `FROM` the pre-existing `node:6.11.5` image. This is an official image, built by the node.js vendors and validated by Docker to be a high-quality image containing the node 6.11.5 interpreter and basic dependencies.
+  - Use `WORKDIR` to specify that all subsequent actions should be taken from the directory `/usr/src/app` in your image filesystem (never the host’s filesystem).
+  - `COPY` the file `package.json` from your host to the present location (`.`) in your image (so in this case, to /usr/src/app/package.json`)
+  - `RUN` the command `npm install` inside your image filesystem (which will read `package.json` to determine your app’s node dependencies, and install them)
+  - `COPY` in the rest of your app’s source code from your host to your image filesystem.
+
 # Docker-compose
