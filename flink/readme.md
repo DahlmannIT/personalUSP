@@ -20,6 +20,11 @@
 
 * [Interfaces](#interfaces)
 
+* [Connection Flink <-> Postgres](#connection-flink<->postgres)
+
+* [Connection Flink <-> Kafka](#connection-flink<->kafka)
+
+
 
 
 
@@ -77,3 +82,9 @@ services:
 ## Important commands
 
 ## Interfaces
+
+## <a name="connection-flink<->postgres"></a> Connection Flink <-> Postgres
+https://github.com/DahlmannIT/personalUSP/tree/master/flink_postgres
+
+## <a name="connection-flink<->postgres"></a> Connection Flink <-> Kafka
+https://github.com/DahlmannIT/personalUSP/tree/master/kafka_flink
