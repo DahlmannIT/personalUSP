@@ -211,6 +211,16 @@ services:
    * create a new topic (inside the connector)
    
     * if you want your topic to be persisted into the database, add `_persist` at the end of the name
+    
+### Make data persistable
+
+* to persist data, we need a `PRIMARY KEY` for your data, therefore we let Flink do its wonders
+
+* lets say, your original data source writes to `Input`-topic in Kafka
+
+* deploy `KeyHashingJob.jar` into Flink, whereas the InputTopic = `Input` and OutputTopic = `Input_persist`
+
+* Flink will generate Primary Keys for your data, so it can be persisted
 
 
 ### Flink
@@ -221,6 +231,19 @@ services:
   * Flink-examples in Jonathan Github
 
 * Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
+
+
+### Postgres
+
+*  `docker exec -it postgres bash
+
+* `psql postgres postgres`
+
+* `\c`
+
+* `\dt`
+
+* enter any `SQL`-commands, ending with a `;`
 
 ### Zeppelin
 
