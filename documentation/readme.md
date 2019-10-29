@@ -228,7 +228,9 @@ services:
 
 * `localhost:8081`
 
-* Submit new Job -> JAR hochladen & starten
+* Submit new Job -> upload & start jar
+
+* Type in field "Program Arguments" "--input-topic transaction_data" and submit
   * Flink-examples in Jonathan Github
 
 * Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
