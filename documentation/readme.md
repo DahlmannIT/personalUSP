@@ -183,7 +183,7 @@ services:
 
 * required only once:
 
-  * it is necessary to have any `.csv`-File in your `data` directory to deploy the connector (next step)
+  * it is necessary to have any `transaction_data.csv`-File in your `data` directory to deploy the connector (next step)
 
   * `bash deploy-connector.sh` or `./ deploy-connector.sh` (for UNIX systems only)
 
