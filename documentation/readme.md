@@ -182,9 +182,36 @@ services:
 
 * `sudo docker-compose up`
 
-* `bash deploy-connector.sh` (for UNIX systems only)
+* required only once:
+
+  * it is necessary to have any `.csv`-File in your `data` directory to deploy the connector (next step)
+
+  * `bash deploy-connector.sh` (for UNIX systems only)
 
 ## <a name="howtouse"></a> How-to-use
+
+### Reading data
+
+* To let Kafka read your data, just put it in the `data` folder
+
+* Kafka will automatically process your data according to your schemes
+
+* correctly parsed data will be moved to the `data/finish` directory
+
+* if parsing failed, you will find your data in `data/error`
+
+* to see and adjust the schemes, take a loot at the `deploy-connector.sh` file
+
+* to add a new data source:
+  
+   * create a new connector (.csv) scheme
+   
+   * create a new `InputFilePattern` 
+   
+   * create a new topic (inside the connector)
+   
+    * if you want your topic to be persisted into the database, add `_persist` at the end of the name
+
 
 ### Flink
 
@@ -215,10 +242,10 @@ services:
 
 * `localhost:3000`
 
-``` 
-user: admin
-password: password
-```
+  ``` 
+  user: admin
+  password: password
+  ```
 
 * Home -> Kafka-Overview
 
