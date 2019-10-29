@@ -179,7 +179,55 @@ services:
 
 ## Installation guide
 
+
+* `sudo docker-compose up`
+
+* `bash deploy-connector.sh` (for UNIX systems only)
+
 ## <a name="howtouse"></a> How-to-use
+
+### Flink
+
+* `localhost:8081`
+
+* Submit new Job -> JAR hochladen & starten
+  * Flink-examples in Jonathan Github
+
+* Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
+
+### Zeppelin
+
+* Fast Data Exploration on database via multiple interpreters
+
+* `localhost:8080`
+
+* create new Notebook
+
+* choose Interpreter and start your coding with e.g. 
+  ```sh
+  %sql 
+  select * from test_topic;
+  ```
+
+### Grafana
+
+* monitoring container-status, based on Prometheus
+
+* `localhost:3000`
+
+``` 
+user: admin
+password: password
+```
+
+* Home -> Kafka-Overview
+
+
+### Prometheus
+
+* plain container monitoring
+
+* `localhost:9090`
 
 ## Important commands
 
