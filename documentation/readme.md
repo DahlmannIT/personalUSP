@@ -179,16 +179,16 @@ services:
 
 ## Installation guide
 
-
 * `sudo docker-compose up`
 
 * required only once:
 
   * it is necessary to have any `.csv`-File in your `data` directory to deploy the connector (next step)
 
-  * `bash deploy-connector.sh` (for UNIX systems only)
+  * `bash deploy-connector.sh` or `./ deploy-connector.sh` (for UNIX systems only)
 
 ## <a name="howtouse"></a> How-to-use
+
 
 ### Reading data
 
@@ -211,6 +211,7 @@ services:
    * create a new topic (inside the connector)
    
     * if you want your topic to be persisted into the database, add `_persist` at the end of the name
+    
     
 ### Make data persistable
 
@@ -282,3 +283,5 @@ services:
 ## Important commands
 
 ## Interfaces
+
+## Trouble Shooting
