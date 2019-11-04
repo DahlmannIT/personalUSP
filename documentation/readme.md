@@ -43,7 +43,7 @@
 ## <a name="dockercomposeyml"></a> docker-compose.yml
 
 ```yml
-ersion: '3'
+version: '3'
 services:
 
   zookeeper:
