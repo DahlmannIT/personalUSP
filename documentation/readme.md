@@ -7,7 +7,7 @@
 
 * [Prerequisites](#prerequisites)
 
-* [Variables](#variables)
+* [Environment Variables](#variables)
 
 * [Ports](#ports)
 
@@ -31,7 +31,7 @@
 ![Architektur 17.10.2019](/img/Architektur_17102019.svg)
 
   The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline
-  for multiple data sources to use. 
+  for multiple data sources to use. Take note that, as a message streaming service, Apache Kafka needs to run `Apache ZooKeeper` for robust synchronization of naming and configuration data as well as keeping track of the Kafka nodes, topics, partitions etc.
   The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink`to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL.
   For a more visual view of your database, please refer to `Apache Zeppelin`.
   
@@ -44,7 +44,36 @@
 
 * (JDK8 installed)
 
-## Variables  
+## Environment Variables  
+
+### ZooKeeper
+
+The ZooKeeper image uses variables prefixed with `ZOOKEEPER_` with the variables expressed exactly as they would appear in the `zookeeper.properties` file. As an example: for `clientPort` and `tickTime`, you can use 
+
+```yml
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+``` 
+
+Please refer to [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html) for a more details. 
+
+### Kafka
+
+The Kafka image uses variables prefixed with `KAFKA_`. 
+
+### Kafka-Connect
+
+### PostgreSQL
+
+### Zeppelin
+
+### Jobmanager
+
+### Taskmanager
+
+### Prometheus
+
+### Grafana
 
 ## Ports
 
@@ -187,7 +216,13 @@ services:
 
 ## Installation guide
 
-* `sudo docker-compose up`
+Start a cluster
+
+  * `sudo docker-compose up`
+  
+Destroy a cluster
+
+  * `sudo docker-compose down`
 
 * required only once:
 
@@ -246,21 +281,31 @@ services:
 
 ### Postgres
 
-*  `docker exec -it postgres bash
+Access the postgres-container bash
 
-* `psql postgres postgres`
+  *  `docker exec -it postgres bash
+  
+Connect to `psql`with username: postgres - password: postgres  
 
-* `\c`
+  * `psql postgres postgres`
+  
+Connect to your preferred database with `\c <database>`  
 
-* `\dt`
+  * `\c`
+  
+Print all tables   
 
-* enter any `SQL`-commands, ending with a `;`
+  * `\dt`
+  
+enter any `SQL`-commands, ending with a `;`
+
+  * `select * from test_topic;`
 
 ### Zeppelin
 
 * Fast Data Exploration on database via multiple interpreters
 
-* `localhost:8080`
+* Access GUI @ `localhost:8080`
 
 * create new Notebook
 
