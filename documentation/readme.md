@@ -28,6 +28,14 @@
 
 ## <a name="frameworks-architecture"></a> Framework's architecture
 
+![Architektur 17.10.2019](/img/Architektur_17102019.svg)
+
+  The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline
+  for multiple data sources to use. 
+  The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink`to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL.
+  For a more visual view of your database, please refer to `Apache Zeppelin`.
+  
+
 ## Prerequisites
 
 * Docker installed
