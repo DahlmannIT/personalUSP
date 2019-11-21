@@ -33,6 +33,8 @@ In your terminal, navigate to `docker-compose.yml` file and start a cluster
 For destroying a cluster, type
 
    * `sudo docker-compose down` 
+   
+To get this platform started you have to move a file which has to be called `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector (???Beschreibung zu connector hinzufügen???). In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` deals as well. After you performed those described two steps you can start a whole docker cluster in the terminal where you have to navigate to the `docker-compose.yml`file. With the simple command `sudo docker-compose up` all containers will get started. If the required docker images aren´t available on your machine they will get downloaded automatically. With the command `sudo docker-compose down` the cluster will be destroyed.
 
 ### 1.5 Installation Guide 
 
@@ -40,7 +42,16 @@ For destroying a cluster, type
 
 ## 2. Frameworks
 
+### 2.1 Architecture
+
 ![Architektur 17.10.2019](/img/Architektur_17102019.svg)
+
+### 2.2 Documentation of Frameworks
+
+https://kafka.apache.org/documentation/
+https://www.postgresql.org/docs/
+https://ci.apache.org/projects/flink/flink-docs-stable/
+https://zeppelin.apache.org/docs/0.8.0/
 
 ## 3. How to use
 
@@ -59,6 +70,10 @@ For adding a new data source, take the following steps:
  * create a new `InputFilePattern`
  * create a new topic inside the connector
     * if your topic needs to be persisted into the database, add `_persist` at the end of the name
+    
+For adding a new data source, you have to take the following steps. Initially you have to create a new connector (.csv) scheme. Afterwards a new `InputFilePattern` has to be created. Finally you need to create a new topic inside the connector. If your topic needs to be persisted into the database, add `_persist`at the end of the name.
+
+(???Beschreibungen jeweils hinzufügen???)
 
 ### 3.2 Make data persistable
 
@@ -70,8 +85,10 @@ For adding a new data source, take the following steps:
 
 * Flink will generate Primary Keys for your data, so it can be persisted
 
-### 3.3  Deploying Flink-job
+To persist the data in the database you first of all need a `PRIMARY KEY` for the data. Our stream processing framework Flink will be used here. You need to deploy the existing flink job `KeyHashingJob.jar` to generate primary keys for all of your data in order to persist them. If your original data source writes to the `Input`-topic in Kafka then you have to deploy the `KeyHashingJob.jar` (see next step) whereas the InputTopic should be called `Input` and OutputTopic should be called `Input_persist`. (???InputTopic hier oder im nächsten Schritt bzw überhaupt noch nötig???)
 
+### 3.3  Deploying Flink-job
+ 
 * `localhost:8081`
 
 * Submit new Job -> upload & start jar
@@ -81,6 +98,8 @@ For adding a new data source, take the following steps:
   * Flink-examples in Jonathan Github
 
 * Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
+
+To deploy the flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. In Jonathan Github are Flink-examples available.
 
 ### 3.4 Accessing PostgreSQL
 
@@ -103,6 +122,8 @@ Print all tables
 enter any `SQL`-commands, ending with a `;`
 
   * `select * from test_topic;`
+  
+In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql postgres postgres` (`psql "username" "password"`). To connect to your preferred database use the command `\c <database>`. In our example just use `\c`. All tables can be printed with `\dt`. After those commands u can enter any `SQL`-commands e.g. `SELECT * FROM test_topic;`. Don´t forget the `;` after your SQL-command!
 
 ### 3.5 Explore data with Zeppelin
 
@@ -118,6 +139,16 @@ enter any `SQL`-commands, ending with a `;`
   %sql 
   select * from test_topic;
   ```
+
+You can also explore the database with the notebook framework Zeppelin which is included. Go to `localhost:8080`to have access to the GUI of Apache Zeppelin. To get started you have to create a new Notebook (the name of the created notebook doesn´t matter so feel free to be creative). In the created Notebook you have to choose an interpreter. After you have chosen one you can start your coding e.g.
+
+```
+%psql
+SELECT * FROM test_topic;
+```
+
+Again, don´t forget the `;`.
+
 
 ### 3.6 Monitoring container status with Grafana
 
