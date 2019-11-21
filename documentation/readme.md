@@ -40,6 +40,8 @@ For destroying a cluster, type
 
 ## 2. Frameworks
 
+![Architektur 17.10.2019](/img/Architektur_17102019.svg)
+
 ## 3. How to use
 
 ### 3.1  Reading data
