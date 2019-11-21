@@ -6,7 +6,7 @@
 
 This software builds a powerful insights-platform to persist, analyze and work with big-data streams.
 
-The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline for multiple data sources to use. Take note that, as a message streaming service, Apache Kafka needs to run `Apache ZooKeeper` for robust synchronization of naming and configuration data as well as keeping track of the Kafka nodes, topics, partitions etc. The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink`to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL. For a more visual view of your database, please refer to `Apache Zeppelin`. 
+The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline for multiple data sources to use. Take note that, as a message streaming service, Apache Kafka needs to run `Apache ZooKeeper` for robust synchronization of naming and configuration data as well as keeping track of the Kafka nodes, topics, partitions etc. The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink` to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL. For a more visual view of your database, please refer to `Apache Zeppelin`. 
 
 
 
