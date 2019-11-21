@@ -32,7 +32,7 @@ In your terminal, navigate to `docker-compose.yml` file and start a cluster
 
 For destroying a cluster, type
 
-​	* `sudo docker-compose down` 
+   * `sudo docker-compose down` 
 
 ### 1.5 Installation Guide 
 
