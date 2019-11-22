@@ -1,12 +1,12 @@
-# Insights Platform Documentation
+# Insight Platform Documentation
 
 ## 1. Getting started
 
 ### 1.1 Introduction
 
-This software builds a powerful insights-platform to persist, analyze and work with big-data streams.
+This software builds a powerful insight-platform to persist, analyze and work with big-data streams.
 
-The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline for multiple data sources to use. Take note that, as a message streaming service, Apache Kafka needs to run `Apache ZooKeeper` for robust synchronization of naming and configuration data as well as keeping track of the Kafka nodes, topics, partitions etc. The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink` to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL. For a more visual view of your database, please refer to `Apache Zeppelin`. 
+The infrastructure consists of the distributed streaming-platform `Apache Kafka` to build a real time data pipeline for multiple data sources to be used. It should be noted that, as a message streaming service, Apache Kafka needs to run `Apache ZooKeeper` for robust synchronization of naming and configurating data as well as keeping track of the Kafka nodes, topics, partitions etc. The data will automatically be cleaned and persisted in a `PostgreSQL` ORDBMS. To stream-process the data, connect `Apache Flink` to the right Kafka-Consumer and deploy your job. Analyzed data and results can also be persisted in PostgreSQL. For a more visual view of your database, please refer to `Apache Zeppelin`. 
 
 
 
@@ -34,7 +34,7 @@ For destroying a cluster, type
 
    * `sudo docker-compose down` 
    
-To get this platform started you have to move a file which has to be called `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector (???Beschreibung zu connector hinzufügen???). In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` works as well. After you performed these two steps you can start a whole docker cluster in the terminal where you have to navigate to the `docker-compose.yml` file. With the simple command `sudo docker-compose up` all containers will get started. If the required docker images aren´t available on your machine they will get downloaded automatically. With the command `sudo docker-compose down` the cluster will be destroyed.
+To get this platform started you have to move a file which has to be named `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector (???Beschreibung zu connector hinzufügen???). In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` works as well. After you performed these two steps you can start a whole docker cluster in the terminal by navigating to the `docker-compose.yml` file. With the simple command `sudo docker-compose up` all containers will start. If the required docker images aren´t available on your machine, they will automatically be downloaded. With the command `sudo docker-compose down` the cluster will be destroyed.
 
 ### 1.5 Installation Guide 
 
@@ -60,7 +60,7 @@ https://zeppelin.apache.org/docs/0.8.0/
 To let Kafka read your data, just move it to the `data` folder. 
 Kafka will automatically process your data according to your schemes.
 
-If the data is parsed correctly, it will be moved to the `data/finish` folder, else you can find your data in `data/error` directory. 
+If the data is parsed correctly, it will be moved to the `data/finish` folder, or else you can find your data in `data/error` directory. 
 
 To inspect and adjust the schemes, take a look at the `deploy-connector.sh` file.
 
@@ -85,7 +85,7 @@ For adding a new data source, you have to take the following steps. Initially yo
 
 * Flink will generate Primary Keys for your data, so it can be persisted
 
-To persist the data in the database you first of all need a `PRIMARY KEY` for the data. Our stream processing framework Flink will be used here. You need to deploy the existing flink job `KeyHashingJob.jar` to generate primary keys for all of your data in order to persist them. If your original data source writes to the `Input`-topic in Kafka then you have to deploy the `KeyHashingJob.jar` (see next step) whereas the InputTopic should be called `Input` and OutputTopic should be called `Input_persist`. (???InputTopic hier oder im nächsten Schritt bzw überhaupt noch nötig???)
+To persist the data in the database you need a `PRIMARY KEY` for the data. Our stream processing framework Flink is used for this purpose. You need to deploy the existing Flink job `KeyHashingJob.jar` to generate primary keys for all your data in order to persist them. (???)If your original data source writes to the `Input`-topic in Kafka, you have to deploy the `KeyHashingJob.jar` (see next step) in which case the InputTopic should be named `Input` and OutputTopic should be named `Input_persist`. (???InputTopic hier oder im nächsten Schritt bzw überhaupt noch nötig???)
 
 ### 3.3  Deploying Flink-job
  
@@ -99,7 +99,7 @@ To persist the data in the database you first of all need a `PRIMARY KEY` for th
 
 * Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
 
-To deploy the flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. There are Flink examples below.
+To deploy the Flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. See the Flink examples below.
 
 ### 3.4 Accessing PostgreSQL
 
@@ -123,7 +123,7 @@ enter any `SQL`-commands, ending with a `;`
 
   * `select * from test_topic;`
   
-In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql postgres postgres` (`psql "username" "password"`). To connect to your preferred database use the command `\c <database>`. In our example just use `\c`. All tables can be printed with `\dt`. After those commands u can enter any `SQL`-commands e.g. `SELECT * FROM test_topic;`. Don´t forget the `;` after your SQL-command!
+In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql postgres postgres` (`psql <username> <password>`). To access your preferred database use the command `\c <database>`. In our example just `\c` is used. All tables can be printed with `\dt`. After these commands you can enter any `SQL`-commands e.g. `SELECT * FROM test_topic;`. The `;` at the end of your SQL-command should by no means be forgotten!
 
 ### 3.5 Explore data with Zeppelin
 
@@ -136,14 +136,14 @@ In the terminal you have direct access to the PostgreSQL database within the pos
 * choose Interpreter and start your coding with e.g. 
 
   ```sh
-  %sql 
+  %jdbc 
   select * from test_topic;
   ```
 
-You can also explore the database with the notebook framework Zeppelin which is included. Go to `localhost:8080`to have access to the GUI of Apache Zeppelin. To get started you have to create a new Notebook (the name of the created notebook doesn´t matter so feel free to be creative). In the created Notebook you have to choose an interpreter. After you have chosen one you can start your coding e.g.
+You can also explore the database with the included notebook framework called Zeppelin. Go to `localhost:8080` to access the GUI of Apache Zeppelin. To get started a new `notebook` must be created (the name of the notebook doesn´t matter, so feel free to be creative). In the notebook created you have to choose an interpreter. After you have chosen one you can start your coding e.g.
 
 ```
-%psql
+%jdbc
 SELECT * FROM test_topic;
 ```
 
