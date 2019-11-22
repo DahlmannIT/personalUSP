@@ -99,7 +99,7 @@ To persist the data in the database you first of all need a `PRIMARY KEY` for th
 
 * Entwickler entscheidet in JAR ob aus Postgres gelesen wird und wo es gespeichert wird (Postgres, ElasticSearch)
 
-To deploy the flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. In Jonathan Github are Flink-examples available.
+To deploy the flink job you have to go to `localhost:8081` where the Flink GUI is accessible. Click the `Submit new Job`-button to upload and start the `KeyHashingJob.jar`. There are Flink examples below.
 
 ### 3.4 Accessing PostgreSQL
 
