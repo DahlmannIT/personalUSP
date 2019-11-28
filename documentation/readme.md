@@ -23,12 +23,15 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 Perform the following two steps (required only once)
 
  * move a file called `transaction_data.csv` to the `data` directory to be able to deploy a connector (next step)
- * execute the `deploy-connector.sh` file with 
-    * `bash deploy-connector.sh` OR `./deploy-connector.sh`
+ 
 
 In your terminal, navigate to `docker-compose.yml` file and start a cluster
 
  * `sudo docker-compose up`
+ 
+ 
+* execute the `deploy-connector.sh` file with 
+    * `bash deploy-connector.sh` OR `./deploy-connector.sh`
 
 For destroying a cluster, type
 
