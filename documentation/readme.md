@@ -41,7 +41,18 @@ To get this platform started you have to move a file which has to be named `tran
 
 ### 1.5 Installation Guide 
 
+create a user called "kafka_connect" in postgres by accessing postgres with 
+`sudo docker exec -it postgres bash` then
+`psql postgres postgres` 
 
+afterwards you create the required user by entering the following commands
+
+```sql
+CREATE USER kafka_connect WITH PASSWORD 'kafka_connect';
+CREATE DATABASE kafka_connect;
+GRANT ALL PRIVILEGES ON DATABASE kafka_connect TO kafka_connect;
+```
+and ./deploy-connectors.sh again!!!
 
 ## 2. Frameworks
 
