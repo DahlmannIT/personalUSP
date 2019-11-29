@@ -116,9 +116,9 @@ Access the postgres-container bash
 
   *  `docker exec -it postgres bash
 
-Connect to `psql`with username: postgres - password: postgres  
+Connect to `psql`with username: kafka_connect - password: kafka_connect  
 
-  * `psql postgres postgres`
+  * `psql kafka_connect kafka_connect`
 
 Connect to your preferred database with `\c <database>`  
 
@@ -126,13 +126,13 @@ Connect to your preferred database with `\c <database>`
 
 Print all tables   
 
-  * `\dt`
+  * `\dt` or `\d`
 
 enter any `SQL`-commands, ending with a `;`
 
-  * `select * from test_topic;`
+  * `select * from transaction_data_persist;`
   
-In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql postgres postgres` (`psql <username> <password>`). To access your preferred database use the command `\c <database>`. In our example just `\c` is used. All tables can be printed with `\dt`. After these commands you can enter any `SQL`-commands e.g. `SELECT * FROM test_topic;`. The `;` at the end of your SQL-command should by no means be forgotten!
+In the terminal you have direct access to the PostgreSQL database within the postgres bash. To get access you have to use the command `docker exec -it postgres bash`. After that you need to connect to `psql` with the username: postgres and the password: postgres. The required command is `psql kafka_connect kafka_connect` (`psql <username> <password>`). To access your preferred database use the command `\c <database>`. In our example just `\c` is used. All tables can be printed with `\dt`. After these commands you can enter any `SQL`-commands e.g. `SELECT * FROM transaction_data_persist;`. The `;` at the end of your SQL-command should by no means be forgotten!
 
 ### 3.5 Explore data with Zeppelin
 
@@ -146,14 +146,14 @@ In the terminal you have direct access to the PostgreSQL database within the pos
 
   ```sh
   %jdbc 
-  select * from test_topic;
+  select * from transaction_data_persist;
   ```
 
 You can also explore the database with the included notebook framework called Zeppelin. Go to `localhost:8080` to access the GUI of Apache Zeppelin. To get started a new `notebook` must be created (the name of the notebook doesn´t matter, so feel free to be creative). In the notebook created you have to choose an interpreter. After you have chosen one you can start your coding e.g.
 
 ```
 %jdbc
-SELECT * FROM test_topic;
+SELECT * FROM transaction_data_persist;
 ```
 
 Again, don´t forget the `;`.
@@ -353,3 +353,8 @@ The Kafka image uses variables prefixed with `KAFKA_`.
 ### 4.3  Connectors
 
 ## 5. Examples
+
+
+___ TROUBLESHOOTING
+
+user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
