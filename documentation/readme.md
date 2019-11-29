@@ -61,7 +61,7 @@ https://zeppelin.apache.org/docs/0.8.0/
 ### 3.1  Reading data
 
 To let Kafka read your data, just move it to the `data` folder. 
-Kafka will automatically process your data according to your schemes.
+Kafka will automatically process your data according to your schemes (in deploy-connector.sh).
 
 If the data is parsed correctly, it will be moved to the `data/finish` folder, or else you can find your data in `data/error` directory. 
 
@@ -69,12 +69,16 @@ To inspect and adjust the schemes, take a look at the `deploy-connector.sh` file
 
 For adding a new data source, take the following steps:
 
- * create a new connector (.csv) scheme
- * create a new `InputFilePattern`
- * create a new topic inside the connector
-    * if your topic needs to be persisted into the database, add `_persist` at the end of the name
+ * create a new connector in deploy-connector.sh (.csv) scheme
+  * copy another connector and change 
+     "name" to `<anything>_source*` e.g. `transaction_data_source`
+     "input.file.pattern" to a regex matching your files, e.g. `".*?transaction_data.*?\\.csv"` for reading all .csv files consisting "transaction_data" 
+     "topic" to `<anything>` e.g. `transaction_data`
+     
+
+
     
-For adding a new data source, you have to take the following steps. Initially you have to create a new connector (.csv) scheme. Afterwards a new `InputFilePattern` has to be created. Finally you need to create a new topic inside the connector. If your topic needs to be persisted into the database, add `_persist`at the end of the name.
+For adding a new data source, you have to take the following steps. Initially you have to create a new connector (.csv) scheme. Afterwards a new `InputFilePattern` has to be created. Finally you need to create a new topic inside the connector.
 
 (???Beschreibungen jeweils hinzufügen???)
 
@@ -89,6 +93,8 @@ For adding a new data source, you have to take the following steps. Initially yo
 * Flink will generate Primary Keys for your data, so it can be persisted
 
 To persist the data in the database you need a `PRIMARY KEY` for the data. Our stream processing framework Flink is used for this purpose. You need to deploy the existing Flink job `KeyHashingJob.jar` to generate primary keys for all your data in order to persist them. (???)If your original data source writes to the `Input`-topic in Kafka, you have to deploy the `KeyHashingJob.jar` (see next step) in which case the InputTopic should be named `Input` and OutputTopic should be named `Input_persist`. (???InputTopic hier oder im nächsten Schritt bzw überhaupt noch nötig???)
+
+neuen Flink job deployen über "flink-example" branch "HashingJob" und dort die Parameter ändern - für output-topic ein "_persist" hinzufügen. dann dort in der umgebungs-console: "gradle clean shadowJar" eine .jar erzeugen (/gradle/lib) und diese als Flinkjob verwenden
 
 ### 3.3  Deploying Flink-job
  
