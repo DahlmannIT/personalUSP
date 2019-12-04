@@ -365,7 +365,6 @@ The Kafka image uses variables prefixed with `KAFKA_`.
 
 ## 5. Examples
 
+## 6. Troubleshooting
 
-___ TROUBLESHOOTING
-
-user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
+* user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
