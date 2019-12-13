@@ -464,6 +464,55 @@ In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors
 
 ## 5. Examples
 
+### 5.1 KeyHashingJob 
+
+To get the Flink-job started we need to give it some various meta data. In our example we use
+
+ ```java
+  String jobName = parameterTool.get("job-name", "KeyHashingJob");
+		String inputTopic = parameterTool.get("input-topic", "transaction_data");
+		String outputTopic = parameterTool.get("output-topic", "transaction_data_persist");
+		String consumerGroup = parameterTool.get("group-id", "KeyHashingGroup");
+		String kafkaAddress = parameterTool.get("kafka-address", "kafka:29092");
+ ```
+
+After getting the execution environment and adding a new kafka consumer to it we need to process the datastream according to our calculation. Like so
+
+ ```java
+ DataStream<String> outputStream = dataStream
+				// parse the json string
+				.map((MapFunction<String, ObjectNode>) value -> (ObjectNode)objectMapper.readTree(value))
+				// do the calculation and add the hash to the payload as well as its definition to the schema
+				.map((MapFunction<ObjectNode, ObjectNode>) value -> {
+					((ObjectNode) value.get("payload")).put("postgres_pk", DigestUtils.sha256Hex(objectMapper.writeValueAsBytes(value.get("payload"))));
+					((ArrayNode) value.get("schema").get("fields")).add(objectMapper.createObjectNode()
+							.put("type","string").put("optional",false).put("field","postgres_pk"));
+					return value;
+				})
+				// convert to string again
+				.map((MapFunction<ObjectNode, String>) value -> objectMapper.writeValueAsString(value));
+ ```
+
+The KeyHashingJob hashes the payload of the current dataset from the input topic and adds the resulting value to the payload. Respectively, the key postgres_pk will be added to the schema.
+
+
+After that the resulting JSON will be converted to string and written to the output topic `transaction_data_persist` via a new Kafka Producer.
+
+ ```java
+ //create a new kafka producer
+		Properties producerProps = new Properties();
+		producerProps.setProperty("bootstrap.servers", kafkaAddress);
+		FlinkKafkaProducer<String> flinkKafkaProducer = new FlinkKafkaProducer<>(outputTopic,
+				new KeyedSerializationSchemaWrapper<>(new SimpleStringSchema()),
+				producerProps, FlinkKafkaProducer.Semantic.AT_LEAST_ONCE);
+
+		//add the producer to the dataStream as a sink
+		outputStream.addSink(flinkKafkaProducer);
+
+		environment.execute(jobName);
+ ```
+
+
 ## 6. Troubleshooting
 
 * user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
