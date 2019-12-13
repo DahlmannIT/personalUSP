@@ -431,7 +431,7 @@ As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the 
 
   For **sink-connectors** we use:
   
-    ```sh
+  ```sh
     curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d '{
           "name": "postgres-sink",
           "config": {
@@ -451,7 +451,7 @@ As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the 
                   "topics.regex": ".*?persist"
                   }
           }'
-    ```
+  ```
     
     This connector reads every topic ending with `persist` and writes to the PostgreSQL database using `kafka_connect` as the user. 
     In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors topics and creates a primary key (PK) called `postgres_pk` by hashing the payload of each event. Afterwards the new data will be written to its respective Kafka-topic, adding a "persist" at its end, so the sink-connector can write it to PostgreSQL.  
