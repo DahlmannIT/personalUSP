@@ -341,7 +341,7 @@ The ZooKeeper image uses variables prefixed with `ZOOKEEPER_` with the variables
       ZOOKEEPER_TICK_TIME: 2000
 ```
 
-Please refer to [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html) for a more details. 
+Please refer to [Confluent Documentation](https://docs.confluent.io/current/installation/docker/config-reference.html) for more details. 
 
 #### 4.2.2 Kafka
 
@@ -349,7 +349,12 @@ The Kafka image uses variables prefixed with `KAFKA_`.
 
 #### 4.2.3 Kafka-Connect
 
+Kafka Connect is used for connecting various datatypes and schemas with Kafka. There are a lot of predefined source and sink connectors available. Please refer to [Confluent Kafka Connect Documentation](https://docs.confluent.io/current/connect/index.html) for more details. For a list of used connectors, refer to [Chapter 4.3 Connectors](#connectors).
+
 #### 4.2.4 PostgreSQL
+
+Die PostgreSQL database wird verwendet um gereinigte Rohdaten sowie schon analysierte Daten und Ergebnisse zu persistieren.
+Please refer to [PostgreSQL Documentation](https://www.postgresql.org/docs/) for more details. 
 
 #### 4.2.5 Zeppelin
 
@@ -357,11 +362,101 @@ The Kafka image uses variables prefixed with `KAFKA_`.
 
 #### 4.2.7 Taskmanager
 
+The Taskmanager is an image of Apache Flink, which use is to process Kafkas incoming data. 
+Please refer to [Apache Flink Documentation](https://ci.apache.org/projects/flink/flink-docs-stable/) for more details.
+
 #### 4.2.8 Prometheus
 
 #### 4.2.9 Grafana
 
 ### 4.3  Connectors
+
+#### 4.3.1 Source-Connectors
+
+As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the following **source-connectors** for: 
+
+* transaction_data 
+  ```sh
+  curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d '{
+        "name": "transaction_data_source",
+        "config": {
+                "tasks.max": "1",
+                "connector.class": "com.github.jcustenborder.kafka.connect.spooldir.SpoolDirCsvSourceConnector",
+                "input.path": "/home/data",
+                "error.path": "/home/data/error",
+                "finished.path": "/home/data/finished",
+                "halt.on.error": "false",
+                "errors.tolerance": "all",
+                "errors.deadletterqueue.topic.name": "csv_deadletterqueue",
+                "errors.deadletterqueue.topic.replication.factor": "1",
+                "empty.poll.wait.ms": "3000",
+                "csv.first.row.as.header": "true",
+                "schema.generation.enabled": "true",
+                "csv.null.field.indicator": "EMPTY_SEPARATORS",
+                "csv.separator.char": "59",
+                "input.file.pattern": ".*?transaction_data.*?\\.csv",
+                "topic": "transaction_data"
+                }
+        }'
+  ``` 
+  which reads CSV-files containing `transaction_data` in its name and are `;` separated. Data will be produced into the `transaction_data` topic of Kafka.
+
+* marketo
+  ```sh
+  "name": "marketo_source",
+        "config": {
+                "tasks.max": "1",
+                "connector.class": "com.github.jcustenborder.kafka.connect.spooldir.SpoolDirCsvSourceConnector",
+                "input.path": "/home/data",
+                "error.path": "/home/data/error",
+                "finished.path": "/home/data/finished",
+                "halt.on.error": "false",
+                "errors.tolerance": "all",
+                "errors.deadletterqueue.topic.name": "csv_deadletterqueue",
+                "errors.deadletterqueue.topic.replication.factor": "1",
+                "empty.poll.wait.ms": "3000",
+                "csv.first.row.as.header": "true",
+                "schema.generation.enabled": "true",
+                "csv.null.field.indicator": "EMPTY_SEPARATORS",
+                "csv.separator.char": "59",
+                "input.file.pattern": ".*?marketo.*?\\.csv",
+                "topic": "marketo"
+                }
+  ```
+  which is the same as `transaction_data` but reading files containing `marketo` in its name. Data will be produced into the `marketo`   topic of Kafka.
+
+  For a detailed view of this connector-class' configuration, check [SpoolDirConnector Documentation](https://docs.confluent.io/current/connect/kafka-connect-spooldir/index.html).
+  
+#### 4.3.2 Sink-Connectors
+
+  For **sink-connectors** we use:
+  
+    ```sh
+    curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d '{
+          "name": "postgres-sink",
+          "config": {
+                  "tasks.max": "1",
+                  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+                  "connection.url": "jdbc:postgresql://postgres:5432/kafka_connect",
+                  "connection.user": "kafka_connect",
+                  "connection.password": "kafka_connect",
+                  "auto.create": "true",
+                  "auto.evolve": "true",
+                  "errors.tolerance": "all",
+                  "errors.deadletterqueue.topic.name": "jdbc_deadletterqueue",
+                  "errors.deadletterqueue.topic.replication.factor": "1",
+                  "pk.mode": "record_value",
+                  "pk.fields": "postgres_pk",
+                  "insert.mode": "upsert",
+                  "topics.regex": ".*?persist"
+                  }
+          }'
+    ```
+    
+    This connector reads every topic ending with `persist` and writes to the PostgreSQL database using `kafka_connect` as the user. 
+    In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors topics and creates a primary key (PK) called `postgres_pk` by hashing the payload of each event. Afterwards the new data will be written to its respective Kafka-topic, adding a "persist" at its end, so the sink-connector can write it to PostgreSQL.  
+    
+    [JDBC Sink Connector Documentation](https://docs.confluent.io/3.1.1/connect/connect-jdbc/docs/sink_connector.html) can be found here.
 
 ## 5. Examples
 
