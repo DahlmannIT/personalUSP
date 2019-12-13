@@ -62,10 +62,14 @@ and ./deploy-connectors.sh again!!!
 
 ### 2.2 Documentation of Frameworks
 
-https://kafka.apache.org/documentation/
-https://www.postgresql.org/docs/
-https://ci.apache.org/projects/flink/flink-docs-stable/
-https://zeppelin.apache.org/docs/0.8.0/
+[Apache Kafka](https://kafka.apache.org/documentation/)
+
+[PostgreSQL](https://www.postgresql.org/docs/)
+
+[Apache Flink](https://ci.apache.org/projects/flink/flink-docs-stable/)
+
+[Apache Zeppelin](https://zeppelin.apache.org/docs/0.8.0/)
+
 
 ## 3. How to use
 
