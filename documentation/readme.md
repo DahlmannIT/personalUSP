@@ -453,10 +453,10 @@ As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the 
           }'
   ```
     
-    This connector reads every topic ending with `persist` and writes to the PostgreSQL database using `kafka_connect` as the user. 
-    In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors topics and creates a primary key (PK) called `postgres_pk` by hashing the payload of each event. Afterwards the new data will be written to its respective Kafka-topic, adding a "persist" at its end, so the sink-connector can write it to PostgreSQL.  
+This connector reads every topic ending with `persist` and writes to the PostgreSQL database using `kafka_connect` as the user. 
+In our case, the Flink-Job `KeyHashingJob` reads data from the source connectors topics and creates a primary key (PK) called `postgres_pk` by hashing the payload of each event. Afterwards the new data will be written to its respective Kafka-topic, adding a "persist" at its end, so the sink-connector can write it to PostgreSQL.  
     
-    [JDBC Sink Connector Documentation](https://docs.confluent.io/3.1.1/connect/connect-jdbc/docs/sink_connector.html) can be found here.
+[JDBC Sink Connector Documentation](https://docs.confluent.io/3.1.1/connect/connect-jdbc/docs/sink_connector.html) can be found here.
 
 ## 5. Examples
 
