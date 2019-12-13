@@ -463,3 +463,7 @@ As you can see in `deploy-connector.sh` (TODO VERLINKUNG EINFÜGEN), we use the 
 ## 6. Troubleshooting
 
 * user "kafka_connect" existiert nicht? selbst erstellen in der postgres bash!
+
+* Tabellen werden in PostgreSQL nicht erstellt, auch wenn alle Scripts ausgeführt wurden? 5 Minuten warten!
+
+* Worker laufen in Kafka-Connect nicht? Datei mit Schema in Data-Folder schieben und connector neu deployen (vorher jeweiligen Connector löschen). mit `curl -X DELETE http://localhost:8083/connectors/<name_connector>`
