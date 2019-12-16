@@ -95,8 +95,6 @@ For adding a new data source, take the following steps:
     
 For adding a new data source, you have to take the following steps. Initially you have to create a new connector (.csv) scheme. Afterwards a new `InputFilePattern` has to be created. Finally you need to create a new topic inside the connector.
 
-(???Beschreibungen jeweils hinzufügen???)
-
 ### 3.2 Make data persistable
 
 * to persist data, we need a `PRIMARY KEY` for your data, therefore we let Flink do its wonders
