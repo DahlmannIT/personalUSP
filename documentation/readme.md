@@ -37,7 +37,7 @@ For destroying a cluster, type
 
    * `sudo docker-compose down` 
    
-To get this platform started you have to move a file which has to be named `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector (???Beschreibung zu connector hinzufügen???). In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` works as well. After you performed these two steps you can start a whole docker cluster in the terminal by navigating to the `docker-compose.yml` file. With the simple command `sudo docker-compose up` all containers will start. If the required docker images aren´t available on your machine, they will automatically be downloaded. With the command `sudo docker-compose down` the cluster will be destroyed.
+To get this platform started you have to move a file which has to be named `transaction_data.csv` into the `data` directory. This is necessary to deploy a connector. In order to deploy a connector you have to execute the `deploy-connector.sh` file with the terminal command `bash deploy connector.sh`. The command `./deploy-connector.sh` works as well. After you performed these two steps you can start a whole docker cluster in the terminal by navigating to the `docker-compose.yml` file. With the simple command `sudo docker-compose up` all containers will start. If the required docker images aren´t available on your machine, they will automatically be downloaded. With the command `sudo docker-compose down` the cluster will be destroyed.
 
 ### 1.5 Installation Guide 
 
