@@ -1,5 +1,7 @@
 # Insight Platform Documentation
 
+This documentation describes the infrastructure of a scalable data streaming and processing platform, which gives the possibility to persist and analyze incoming data from various types and sources. 
+
 ## 1. Getting started
 
 ### 1.1 Introduction
@@ -11,6 +13,8 @@ The infrastructure consists of the distributed streaming-platform `Apache Kafka`
 
 
 ### 1.2 Use Cases
+
+As a 
 
 ### 1.3 Prerequisites
 
@@ -52,7 +56,7 @@ CREATE USER kafka_connect WITH PASSWORD 'kafka_connect';
 CREATE DATABASE kafka_connect;
 GRANT ALL PRIVILEGES ON DATABASE kafka_connect TO kafka_connect;
 ```
-and ./deploy-connectors.sh again!!!
+and ./deploy-connectors.sh again!
 
 ## 2. Frameworks
 
@@ -105,7 +109,9 @@ For adding a new data source, you have to take the following steps. Initially yo
 
 * Flink will generate Primary Keys for your data, so it can be persisted
 
-To persist the data in the database you need a `PRIMARY KEY` for the data. Our stream processing framework Flink is used for this purpose. You need to deploy the existing Flink job `KeyHashingJob.jar` to generate primary keys for all your data in order to persist them. (???)If your original data source writes to the `Input`-topic in Kafka, you have to deploy the `KeyHashingJob.jar` (see next step) in which case the InputTopic should be named `Input` and OutputTopic should be named `Input_persist`. (???InputTopic hier oder im nächsten Schritt bzw überhaupt noch nötig???)
+To persist the data in the database you need a `PRIMARY KEY` for the data. Our stream processing framework Flink is used for this purpose. You need to deploy the existing Flink job `KeyHashingJob.jar` to generate primary keys for all your data in order to persist them. If your original data source writes to the `Input`-topic in Kafka, you have to deploy the `KeyHashingJob.jar` (see next step) in which case the InputTopic should be named `Input` and OutputTopic should be named `Input_persist`. You can also configure those variables in the Flinkjob.
+
+To make your own Flinkjob, check 
 
 neuen Flink job deployen über "flink-example" branch "HashingJob" und dort die Parameter ändern - für output-topic ein "_persist" hinzufügen. dann dort in der umgebungs-console: "gradle clean shadowJar" eine .jar erzeugen (/gradle/lib) und diese als Flinkjob verwenden
 
